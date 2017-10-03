@@ -1,9 +1,8 @@
-[![Build Status](https://travis-ci.org/seeliang/react-redux-router.svg?branch=develop)](https://travis-ci.org/seeliang/react-redux-router)
 
-React-redux-router demo
+React-webpack
 ===================
 
-this is a demo of how react redux router could be implemented 
+this is a base of react app
 
 ----------
 
@@ -15,7 +14,6 @@ this is a demo of how react redux router could be implemented
 
 ## linter 
 * [eslint](https://www.npmjs.com/package/eslint)
-* [sass lint](https://www.npmjs.com/package/sass-lint)
 
 ----------
 
