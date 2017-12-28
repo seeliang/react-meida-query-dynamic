@@ -34,8 +34,8 @@ gulp.task('vendor:publish', () => {
 
 gulp.task('vendor:dev', () => {
   return gulp.src([
-    paths.package + 'react/dist/react.js',
-    paths.package + 'react-dom/dist/react-dom.js'
+    paths.package + 'react/umd/react.production.min.js',
+    paths.package + 'react-dom/umd/react-dom.production.min.js'
   ])
     .pipe(gulp.dest(paths.dist + 'js/vendor/'));
 });
