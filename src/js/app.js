@@ -6,7 +6,7 @@ class Root extends React.Component {
     return (
       <div>
         <h1> Hello world</h1>
-        <input type="checkbox"></input>
+        <input type="checkbox"/>
       </div>
     );
   }
