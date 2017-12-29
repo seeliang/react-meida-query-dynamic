@@ -4,7 +4,10 @@ import {render} from 'react-dom';
 class Root extends React.Component {
   render() {
     return (
-      <h1> Hello </h1>
+      <div>
+        <h1> Hello world</h1>
+        <input type="checkbox"></input>
+      </div>
     );
   }
 }
