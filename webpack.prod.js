@@ -8,6 +8,17 @@ const webpack = require('webpack'),
   base = require('./webpack.base.js'),
   prod = {
     devtool: 'nosources-source-map',
+    module: {
+      loaders: [{
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        include: __dirname,
+        query: {
+          presets: [ 'es2015', 'react']
+        }
+      }]
+    },
     plugins: [
       new webpack.optimize.UglifyJsPlugin({
         output: {

@@ -1,14 +1,14 @@
-const dev = require('./webpack.dev.js'),
-  prod = require('./webpack.prod.js');
 let config;
 
-console.log('\n' + 'OK, we will load config for ' + process.env.NODE_ENV + '\n'); 
-
 if(process.env.NODE_ENV === 'prod') {
+  const prod = require('./webpack.prod.js');
+  console.log('\n' + 'OK, we will load config for prod \n'); 
   config = prod;
 }
 
 if(process.env.NODE_ENV === 'dev') {
+  const dev = require('./webpack.dev.js');
+  console.log('\n' + 'OK, we will load config for dev \n'); 
   config = dev;
 }
 
