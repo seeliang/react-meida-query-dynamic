@@ -14,6 +14,7 @@ require('sl-gt-synclint')(gulp);
 
 gulp.task('html', () => {
   return gulp.src('./index.html')
+    .pipe(replace('development.js','production.min.js'))
     .pipe(replace('app.js','app.min.js'))
     .pipe(replace('http://localhost:8080/dist/',''))
     .pipe(gulp.dest(paths.dist));
@@ -34,8 +35,8 @@ gulp.task('vendor:publish', () => {
 
 gulp.task('vendor:dev', () => {
   return gulp.src([
-    paths.package + 'react/umd/react.development.min.js',
-    paths.package + 'react-dom/umd/react-dom.development.min.js'
+    paths.package + 'react/umd/react.development.js',
+    paths.package + 'react-dom/umd/react-dom.development.js'
   ])
     .pipe(gulp.dest(paths.dist + 'js/vendor/'));
 });
