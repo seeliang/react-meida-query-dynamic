@@ -1,7 +1,7 @@
 const path =  require('path');
 module.exports = {
   entry: {
-    app: './src/js/app.js'
+    app: './src/index.js'
   },
 
   externals: {
