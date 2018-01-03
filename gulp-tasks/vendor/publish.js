@@ -1,5 +1,5 @@
 const gulp = require('gulp'),
-  paths = require('../../tasks/paths.js');
+  paths = require('../../task-sets/paths.js');
 
 module.exports =  () => {
   return gulp.src([

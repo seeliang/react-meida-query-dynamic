@@ -1,6 +1,6 @@
 const gulp = require('gulp'),
   webpack = require('webpack-stream'),
-  paths = require('../tasks/paths.js');
+  paths = require('../task-sets/paths.js');
 
 module.exports = () => {
   return gulp.src(paths.src + 'js/app.js')
