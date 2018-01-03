@@ -2422,6 +2422,12 @@ gulp-replace@^0.6.1:
     readable-stream "^2.0.1"
     replacestream "^4.0.0"
 
+gulp-task-loader@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/gulp-task-loader/-/gulp-task-loader-1.4.4.tgz#58ead58179e7adca261a28b96146b254ebb660e8"
+  dependencies:
+    object-assign "^4.0.1"
+
 gulp-util@>=2.2.0, gulp-util@^3.0.0, gulp-util@^3.0.7, gulp-util@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
