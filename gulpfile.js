@@ -11,6 +11,7 @@ const clean = require('gulp-clean'),
   webpack = require('webpack-stream');
 
 require('sl-gt-synclint')(gulp);
+require('gulp-task-loader')();
 
 gulp.task('html', () => {
   return gulp.src('./index.html')
@@ -23,22 +24,6 @@ gulp.task('html', () => {
 gulp.task('clean',() => {
   return gulp.src(paths.dist)
     .pipe(clean());
-});
-
-gulp.task('vendor:publish', () => {
-  return gulp.src([
-    paths.package + 'react/umd/react.production.min.js',
-    paths.package + 'react-dom/umd/react-dom.production.min.js'
-  ])
-    .pipe(gulp.dest(paths.dist + 'js/vendor/'));
-});
-
-gulp.task('vendor:dev', () => {
-  return gulp.src([
-    paths.package + 'react/umd/react.development.js',
-    paths.package + 'react-dom/umd/react-dom.development.js'
-  ])
-    .pipe(gulp.dest(paths.dist + 'js/vendor/'));
 });
 
 gulp.task('webpack',() => {
