@@ -6,7 +6,6 @@ const clean = require('gulp-clean'),
     package: './node_modules/'
   },
   replace = require('gulp-replace'),
-  rename = require('gulp-rename'),
   sequence = require('run-sequence'),
   webpack = require('webpack-stream');
 
@@ -30,17 +29,6 @@ gulp.task('webpack',() => {
   return gulp.src(paths.src + 'js/app.js')
     .pipe(webpack(require('./webpack.config.js')))
     .pipe(gulp.dest(paths.dist + 'js/'));
-});
-
-gulp.task('js:rename', () => {
-  return gulp.src(paths.dist + 'js/app.js')
-    .pipe(rename('app.min.js'))
-    .pipe(gulp.dest(paths.dist + 'js/'));
-});
-
-gulp.task('js:clean', () => {
-  return gulp.src(paths.dist + 'js/app.js')
-    .pipe(clean());
 });
 
 gulp.task('publish', () => {
