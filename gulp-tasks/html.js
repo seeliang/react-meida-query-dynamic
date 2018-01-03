@@ -1,6 +1,6 @@
 const gulp = require('gulp'),
   replace = require('gulp-replace'),
-  paths = require('../tasks/paths.js');
+  paths = require('../task-sets/paths.js');
 
 module.exports = () => {
   return gulp.src('./index.html')
