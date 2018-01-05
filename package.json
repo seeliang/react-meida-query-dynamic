@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-router",
+  "name": "react-jest",
   "version": "0.0.1",
-  "description": "react redux router demo",
+  "description": "react jest base",
   "main": "index.js",
   "scripts": {
     "js-lint": "./node_modules/.bin/eslint src/js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/seeliang/react-redux-router.git"
+    "url": "git+https://github.com/seeliang/react-jest.git"
   },
   "keywords": [
     "react"
@@ -21,9 +21,9 @@
   "author": "sihui liang me@sihuiliang.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/seeliang/react-redux-router/issues"
+    "url": "https://github.com/seeliang/react-jest/issues"
   },
-  "homepage": "https://github.com/seeliang/react-redux-router#readme",
+  "homepage": "https://github.com/seeliang/react-jest#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",

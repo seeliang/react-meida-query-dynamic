@@ -1,8 +1,8 @@
 
-React-webpack
+React-jest
 ===================
 
-this is a base of react app
+this is a base of react app with jest testing
 
 ----------
 
