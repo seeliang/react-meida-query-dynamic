@@ -1,29 +1,30 @@
 {
-  "name": "react-redux-router",
-  "version": "0.0.1",
+  "name": "react-webpack",
   "description": "react redux router demo",
+  "author": "sihui liang me@sihuiliang.com",
+  "license": "ISC",
+  "homepage": "https://github.com/seeliang/react-webpack#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seeliang/react-webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seeliang/react-webpack/issues"
+  },
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "js-lint": "./node_modules/.bin/eslint src/js",
-    "lint-sync": "./node_modules/.bin/gulp synclint-copy --path sl-fe-lint",
     "build": "NODE_ENV=prod yarn gulp publish",
     "dev-env": "NODE_ENV=dev node node_modules/.bin/webpack-dev-server --progress --inline --hot",
+    "js-lint": "./node_modules/.bin/eslint src/js",
+    "lint-sync": "./node_modules/.bin/gulp synclint-copy --path sl-fe-lint",
     "start": "yarn gulp vendor:dev & yarn dev-env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/seeliang/react-redux-router.git"
+  "dependencies": {
+    "react": "16",
+    "react-dom": "16"
   },
-  "keywords": [
-    "react"
-  ],
-  "author": "sihui liang me@sihuiliang.com",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/seeliang/react-redux-router/issues"
-  },
-  "homepage": "https://github.com/seeliang/react-redux-router#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
@@ -47,8 +48,7 @@
     "webpack-stream": "^4.0.0",
     "yarn": "^0.27.5"
   },
-  "dependencies": {
-    "react": "16",
-    "react-dom": "16"
-  }
+  "keywords": [
+    "react"
+  ]
 }
