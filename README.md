@@ -1,14 +1,13 @@
 
-React-jest
+React-emzyme
 ===================
 
-this is a base of react app with jest testing
+this is a base of react app with jest / enzyme testing
 
 ----------
 
 ## Env 
-* node 6.11.2
-* npm 3.10.10
+* node 6
 
 ----------
 
