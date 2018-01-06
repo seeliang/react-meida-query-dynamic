@@ -15,7 +15,7 @@ const webpack = require('webpack'),
         loader: 'babel-loader',
         include: __dirname,
         query: {
-          presets: [ 'es2015', 'react']
+          presets: [ 'env', 'react']
         }
       }]
     },

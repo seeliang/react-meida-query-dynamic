@@ -8,7 +8,7 @@ const base = require('./webpack.base.js'),
         loader: 'babel-loader',
         include: __dirname,
         query: {
-          presets: [ 'es2015', 'react', 'react-hmre' ]
+          presets: [ 'env', 'react', 'react-hmre' ]
         }
       }]
     },
