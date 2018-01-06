@@ -1,15 +1,15 @@
 {
-  "name": "react-redux-router",
+  "name": "react-webpack",
   "description": "react redux router demo",
   "author": "sihui liang me@sihuiliang.com",
   "license": "ISC",
-  "homepage": "https://github.com/seeliang/react-redux-router#readme",
+  "homepage": "https://github.com/seeliang/react-webpack#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/seeliang/react-redux-router.git"
+    "url": "git+https://github.com/seeliang/react-webpack.git"
   },
   "bugs": {
-    "url": "https://github.com/seeliang/react-redux-router/issues"
+    "url": "https://github.com/seeliang/react-webpack/issues"
   },
   "version": "0.0.1",
   "main": "index.js",
