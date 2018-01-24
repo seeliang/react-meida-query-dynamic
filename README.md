@@ -11,12 +11,12 @@ this is a base of react app with jest / enzyme testing
 
 ----------
 
-## linter 
+## Linter 
 * [eslint](https://www.npmjs.com/package/eslint)
 
 ----------
 
-## dev setup
+## Dev setup
 
 ### JS
 * [webpack](https://webpack.js.org) with webpack dev server + reload
@@ -30,6 +30,6 @@ check render at http://localhost:8080/
 
 ----------
 
-## Publish 
+## Build 
 
-npm run publish
+`npm run build`

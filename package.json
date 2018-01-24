@@ -16,7 +16,7 @@
   "scripts": {
     "build": "NODE_ENV=prod yarn gulp publish",
     "dev-env": "NODE_ENV=dev node node_modules/.bin/webpack-dev-server --progress --inline --hot",
-    "js-lint": "./node_modules/.bin/eslint src/js",
+    "js-lint": "yarn eslint src --fix",
     "lint-sync": "./node_modules/.bin/gulp synclint-copy --path sl-fe-lint",
     "start": "yarn gulp vendor:dev & yarn dev-env",
     "test": "yarn lint-sync && yarn js-lint && yarn jest --coverage"
