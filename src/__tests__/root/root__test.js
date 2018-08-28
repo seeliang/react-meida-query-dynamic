@@ -1,7 +1,6 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {it, expect} from 'jest';
 
 import Enzyme from 'enzyme';
 import {mount} from 'enzyme';
