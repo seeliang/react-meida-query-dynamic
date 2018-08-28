@@ -4,12 +4,14 @@
   2.add gzip when it is necessay
   https://github.com/webpack-contrib/compression-webpack-plugin
 */
+
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack'),
   base = require('./webpack.base.js'),
   prod = {
     devtool: 'nosources-source-map',
     module: {
-      loaders: [{
+      rules: [{
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
@@ -20,11 +22,7 @@ const webpack = require('webpack'),
       }]
     },
     plugins: [
-      new webpack.optimize.UglifyJsPlugin({
-        output: {
-          comments: false
-        }
-      })
+      new UglifyJsPlugin()
     ]
   };
 
