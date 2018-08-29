@@ -27,8 +27,8 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-eslint": "^7.2.3",
-    "babel-jest": "21",
+    "babel-eslint": "8",
+    "babel-jest": "23",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "1",
     "babel-preset-react": "^6.23.0",
@@ -42,18 +42,20 @@
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.6.1",
+    "gulp-replace": "^1.0.0",
     "gulp-task-loader": "^1.4.4",
-    "jest": "21",
-    "jest-cli": "21",
+    "jest": "23",
+    "jest-cli": "23",
     "react-test-renderer": "^16.2.0",
     "run-sequence": "^2.1.0",
     "sl-fe-lint": "^2.0.1",
     "sl-gt-synclint": "^1.1.1",
-    "webpack": "^3.5.5",
-    "webpack-dev-server": "^2.7.1",
-    "webpack-stream": "^4.0.0",
-    "yarn": "^0.27.5"
+    "uglifyjs-webpack-plugin": "1",
+    "webpack": "4",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "3",
+    "webpack-stream": "5",
+    "yarn": "1"
   },
   "keywords": [
     "react"

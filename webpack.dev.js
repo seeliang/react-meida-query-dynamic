@@ -2,7 +2,7 @@ const base = require('./webpack.base.js'),
   webpack = require('webpack'),
   dev = {
     module: {
-      loaders: [{
+      rules: [{
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
