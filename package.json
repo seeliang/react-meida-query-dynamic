@@ -17,9 +17,8 @@
     "build": "NODE_ENV=prod yarn gulp publish",
     "dev-env": "NODE_ENV=dev node node_modules/.bin/webpack-dev-server --progress --inline --hot",
     "js-lint": "yarn eslint src --fix",
-    "lint-sync": "./node_modules/.bin/gulp synclint-copy --path sl-fe-lint",
     "start": "yarn gulp vendor:dev & yarn dev-env",
-    "test": "yarn lint-sync && yarn js-lint && yarn jest --coverage"
+    "test": "yarn js-lint && yarn jest --coverage"
   },
   "dependencies": {
     "react": "^16",
@@ -48,8 +47,6 @@
     "jest-cli": "23",
     "react-test-renderer": "^16.2.0",
     "run-sequence": "^2.1.0",
-    "sl-fe-lint": "^2.0.1",
-    "sl-gt-synclint": "^1.1.1",
     "uglifyjs-webpack-plugin": "1",
     "webpack": "4",
     "webpack-cli": "^3.1.0",
