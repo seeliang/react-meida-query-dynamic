@@ -17,13 +17,12 @@
     "build": "NODE_ENV=prod yarn gulp publish",
     "dev-env": "NODE_ENV=dev node node_modules/.bin/webpack-dev-server --progress --inline --hot",
     "js-lint": "yarn eslint src --fix",
-    "lint-sync": "./node_modules/.bin/gulp synclint-copy --path sl-fe-lint",
     "start": "yarn gulp vendor:dev & yarn dev-env",
-    "test": "yarn lint-sync && yarn js-lint && yarn jest --coverage"
+    "test": "yarn js-lint && yarn jest --coverage"
   },
   "dependencies": {
-    "react": "16",
-    "react-dom": "16"
+    "react": "^16",
+    "react-dom": "^16"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -34,9 +33,10 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-2": "^6.22.0",
-    "enzyme": "3",
+    "enzyme": "^3",
     "enzyme-adapter-react-16": "1",
-    "eslint": "5",
+    "eslint": "^4",
+    "eslint-plugin-jest": "^21",
     "eslint-plugin-react": "^7.2.1",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
@@ -47,8 +47,6 @@
     "jest-cli": "23",
     "react-test-renderer": "^16.2.0",
     "run-sequence": "^2.1.0",
-    "sl-fe-lint": "^2.0.1",
-    "sl-gt-synclint": "^1.1.1",
     "uglifyjs-webpack-plugin": "1",
     "webpack": "4",
     "webpack-cli": "^3.1.0",

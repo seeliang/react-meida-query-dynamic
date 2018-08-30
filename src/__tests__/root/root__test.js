@@ -1,10 +1,13 @@
-import Root from '../../src/root';
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 
 import Enzyme from 'enzyme';
 import {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+
+import Root from '../../root';
+
 Enzyme.configure({ adapter: new Adapter() });
 
 it('matches snapshot', () => {
@@ -17,7 +20,6 @@ it('matches snapshot', () => {
 it('has input',() => {
   const tree = mount(
     <Root/>
-  )
-  
+  );
   expect(tree.find('input')).toHaveLength(1);
 });
