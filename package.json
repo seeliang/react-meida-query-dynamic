@@ -15,7 +15,7 @@
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=prod yarn gulp publish",
-    "dev-env": "NODE_ENV=dev node node_modules/.bin/webpack-dev-server --progress --inline --hot",
+    "dev-env": "NODE_ENV=dev yarn webpack-dev-server --progress --inline --hot --mode development --https",
     "js-lint": "yarn eslint src --fix",
     "start": "yarn gulp vendor:dev & yarn dev-env",
     "test": "yarn js-lint && yarn jest --coverage"
