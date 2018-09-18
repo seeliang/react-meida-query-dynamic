@@ -1,23 +1,24 @@
-const path =  require('path');
+const path = require('path');
+
 module.exports = {
   entry: {
-    app: './src/index.js'
+    app: './src/demo.js',
   },
 
   externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM'
+    react: 'React',
+    'react-dom': 'ReactDOM',
   },
 
   output: {
-    path: (path.join(__dirname,'/dist/js')),
-    publicPath:'dist/js',
-    filename: '[name].js'
+    path: (path.join(__dirname, '/dist/js')),
+    publicPath: 'dist/js',
+    filename: '[name].js',
   },
 
   resolve: {
     modules: [
-      'node_modules'
-    ]
-  }
+      'node_modules',
+    ],
+  },
 };
