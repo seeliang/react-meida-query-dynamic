@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "debounce": "^1.2.0",
+    "prop-types": "^15.6.2",
     "react": "^16",
     "react-dom": "^16"
   },
@@ -49,7 +50,7 @@
     "gulp-task-loader": "^1.4.4",
     "jest": "23",
     "jest-cli": "23",
-    "prop-types": "^15.6.2",
+
     "run-sequence": "^2.1.0",
     "uglifyjs-webpack-plugin": "1",
     "webpack": "4",
