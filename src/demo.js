@@ -34,10 +34,14 @@ Demo1.propTypes = {
   }).isRequired,
 };
 
+const config = {
+  isMobile: [0, 768],
+  isDesktop: [769, 9999],
+};
 
 const Wrapped = mQDynamic(Demo1);
 
-const WrappedDemo = mQDynamic(Demo);
+const WrappedDemo = mQDynamic(Demo, config);
 
 const DemoRoot = () => (
   <Fragment>
