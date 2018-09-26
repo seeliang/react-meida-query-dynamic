@@ -3,10 +3,6 @@ import debounce from 'debounce';
 
 const getDisplayName = WrappedComponent => WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
-const optionsDefault = {
-  isMobile: [0, 960],
-};
-
 const result = (arr, value) => arr[0] <= value && value <= arr[1];
 
 const generateFeed = (winWidth, options) => Object.keys(options).reduce(
@@ -15,7 +11,6 @@ const generateFeed = (winWidth, options) => Object.keys(options).reduce(
 );
 
 const mQDynamic = (RenderComponent, setting) => {
-  const options = setting || optionsDefault;
   class MQD extends Component {
     constructor() {
       super();
@@ -25,12 +20,10 @@ const mQDynamic = (RenderComponent, setting) => {
       };
     }
 
+
     componentDidMount() {
       const initWinWidth = window.innerWidth;
-      this.setState({
-        currentWindowWidth: initWinWidth,
-        feed: generateFeed(initWinWidth, options),
-      });
+      this.updateState(initWinWidth);
       window.addEventListener('resize', (e) => {
         debounce(this.handleResize(e), 300);
       });
@@ -40,12 +33,21 @@ const mQDynamic = (RenderComponent, setting) => {
       window.removeEventListener('resize', this.handleScroll);
     }
 
+    updateState(width) {
+      this.setState({
+        currentWindowWidth: width,
+      });
+
+      if (setting) {
+        this.setState({
+          feed: generateFeed(width, setting),
+        });
+      }
+    }
+
     handleResize(e) {
       const curWinWidth = e.target.innerWidth;
-      this.setState({
-        currentWindowWidth: curWinWidth,
-        feed: generateFeed(curWinWidth, options),
-      });
+      this.updateState(curWinWidth);
     }
 
     render() {
