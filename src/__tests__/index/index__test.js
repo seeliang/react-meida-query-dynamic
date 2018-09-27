@@ -65,4 +65,11 @@ describe('media query detector', () => {
     expect(tree.prop('mediaQuery').feed.isMobile).toEqual(true);
     global.innerWidth = 1024;
   });
+
+  it('shall pass props', () => {
+    const tree = shallow(
+      <WrappedDemo number={4} />,
+    );
+    expect(tree.prop('number')).toEqual(4);
+  });
 });
