@@ -10,4 +10,3 @@ notifications:
     - sway.liang@gmail.com
 script: 
   - npm run test
-  - npm run build
