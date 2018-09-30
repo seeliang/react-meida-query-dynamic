@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React from 'react'; // eslint-disable-line
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import PropTypes from 'prop-types';

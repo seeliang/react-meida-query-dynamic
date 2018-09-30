@@ -1,32 +1,35 @@
 {
-  "name": "react-enzyme",
-  "description": "react jest base",
-  "author": "sihui liang me@sihuiliang.com",
-  "license": "ISC",
-  "homepage": "https://github.com/seeliang/react-enzyme#readme",
+  "name": "react-mqd",
+  "description": "react HOC for reading window width",
+  "author": "sihui liang hi@sihuiliang.com",
+  "license": "MIT",
+  "homepage": "https://github.com/seeliang/react-media-query-dynamic#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/seeliang/react-enzyme.git"
+    "url": "git+https://github.com/seeliang/react-media-query-dynamic.git"
   },
   "bugs": {
-    "url": "https://github.com/seeliang/react-enzyme/issues"
+    "url": "https://github.com/seeliang/react-media-query-dynamic/issues"
   },
-  "version": "0.0.1",
-  "main": "index.js",
+  "version": "1.0.0",
+  "main": "./lib/index.js",
   "scripts": {
-    "build": "NODE_ENV=prod yarn gulp publish",
     "dev-env": "NODE_ENV=dev yarn webpack-dev-server --progress --inline --hot --mode development --https",
     "js-lint": "yarn eslint src --fix",
+    "js-test": "yarn add react@16 -P && yarn jest --coverage",
     "start": "yarn gulp vendor:dev & yarn dev-env",
-    "test": "yarn js-lint && yarn jest --coverage"
+    "transpile": "babel src -d lib --copy-files",
+    "test": "yarn js-lint && yarn js-test"
   },
   "dependencies": {
     "debounce": "^1.2.0",
-    "prop-types": "^15.6.2",
-    "react": "^16",
-    "react-dom": "^16"
+    "prop-types": "^15.6.2"
+  },
+  "peerDependencies": {
+    "react": "16"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "8",
     "babel-jest": "23",
@@ -50,7 +53,7 @@
     "gulp-task-loader": "^1.4.4",
     "jest": "23",
     "jest-cli": "23",
-
+    "react-dom": "^16",
     "run-sequence": "^2.1.0",
     "uglifyjs-webpack-plugin": "1",
     "webpack": "4",
@@ -60,12 +63,13 @@
     "yarn": "1"
   },
   "keywords": [
-    "react"
+    "react",
+    "HOC",
+    "responsive"
   ],
   "jest": {
-    "unmockedModulePathPatterns": [
-      "node_modules/react/",
-      "node_modules/enzyme/"
+    "moduleDirectories": [
+      "<rootDir>/node_modules"
     ]
   }
 }
