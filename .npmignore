@@ -1,5 +1,3 @@
-__test__
-demo.js
-*.html
-gulp-tasks
-webpack.*
+
+*
+!src/index.js
