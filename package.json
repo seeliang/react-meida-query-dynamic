@@ -19,7 +19,7 @@
     "js-test": "yarn add react@16 -P && yarn jest --coverage",
     "start": "yarn gulp vendor:dev & yarn dev-env",
     "transpile": "babel src -d lib --copy-files",
-    "test": "yarn js-lint && && yarn js-test"
+    "test": "yarn js-lint && yarn js-test"
   },
   "dependencies": {
     "debounce": "^1.2.0",
