@@ -11,4 +11,4 @@ this is a HOC for repsonsive react components
 ## Features
 * Read window width and pass it to props
 * Read resized window width and pass it to props
-* passing window width range and return bool to props => [here](https://github.com/seeliang/react-meida-query-dynamic/blob/66b44572c6318e11acd7d5cf3cd549955440821a/demo.js#L37) 
+* passing window width range and return bool to props => [here](https://github.com/seeliang/react-meida-query-dynamic/demo.js#L37) 
