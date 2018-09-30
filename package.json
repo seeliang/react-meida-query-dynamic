@@ -2,7 +2,7 @@
   "name": "react-mqd",
   "description": "react HOC for reading window width",
   "author": "sihui liang hi@sihuiliang.com",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/seeliang/react-media-query-dynamic#readme",
   "repository": {
     "type": "git",
@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "debounce": "^1.2.0",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.6.2"
+  },
+  "peerDependencies": {
     "react": "^16",
     "react-dom": "^16"
   },
