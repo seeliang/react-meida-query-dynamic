@@ -16,19 +16,19 @@
   "scripts": {
     "dev-env": "NODE_ENV=dev yarn webpack-dev-server --progress --inline --hot --mode development --https",
     "js-lint": "yarn eslint src --fix",
+    "js-test": "yarn add react@16 -P && yarn jest --coverage",
     "start": "yarn gulp vendor:dev & yarn dev-env",
     "transpile": "babel src -d lib --copy-files",
-    "test": "yarn js-lint && yarn jest --coverage"
+    "test": "yarn js-lint && && yarn js-test"
   },
   "dependencies": {
     "debounce": "^1.2.0",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
-    "react": "^16"
+    "react": "16"
   },
   "devDependencies": {
-    "react-dom": "^16",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "8",
@@ -53,6 +53,7 @@
     "gulp-task-loader": "^1.4.4",
     "jest": "23",
     "jest-cli": "23",
+    "react-dom": "^16",
     "run-sequence": "^2.1.0",
     "uglifyjs-webpack-plugin": "1",
     "webpack": "4",
@@ -67,9 +68,8 @@
     "responsive"
   ],
   "jest": {
-    "unmockedModulePathPatterns": [
-      "node_modules/react/",
-      "node_modules/enzyme/"
+    "moduleDirectories": [
+      "<rootDir>/node_modules"
     ]
   }
 }
