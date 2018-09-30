@@ -62,7 +62,9 @@
     "yarn": "1"
   },
   "keywords": [
-    "react"
+    "react",
+    "HOC",
+    "responsive"
   ],
   "jest": {
     "unmockedModulePathPatterns": [
