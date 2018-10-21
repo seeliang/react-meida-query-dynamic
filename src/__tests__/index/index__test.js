@@ -31,14 +31,22 @@ Demo.propTypes = {
 const WrappedDemo = mQDynamic(Demo, config);
 
 describe('media query detector', () => {
-  it('shall read init Jest window size', () => {
+  it('shall read init Jest window width', () => {
     const tree = shallow(
       <WrappedDemo />,
     );
     expect(tree.prop('mediaQuery').currentWindowWidth).toEqual(1024);
   });
 
-  it('shall read window after resize', () => {
+
+  it('shall read init Jest window height', () => {
+    const tree = shallow(
+      <WrappedDemo />,
+    );
+    expect(tree.prop('mediaQuery').currentWindowHeight).toEqual(768);
+  });
+
+  it('shall read window width after resize', () => {
     const tree = shallow(
       <WrappedDemo />,
     );
@@ -47,6 +55,18 @@ describe('media query detector', () => {
     global.dispatchEvent(new Event('resize'));
     expect(tree.prop('mediaQuery').currentWindowWidth).toEqual(500);
     global.innerWidth = 1024;
+  });
+
+
+  it('shall read window height after resize', () => {
+    const tree = shallow(
+      <WrappedDemo />,
+    );
+
+    global.innerHeight = 500;
+    global.dispatchEvent(new Event('resize'));
+    expect(tree.prop('mediaQuery').currentWindowHeight).toEqual(500);
+    global.innerHeight = 768;
   });
 
   it('shall return feed', () => {

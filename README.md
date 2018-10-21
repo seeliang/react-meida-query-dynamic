@@ -9,6 +9,11 @@ this is a HOC for repsonsive react components
 
 ----------
 ## Features
+
+### 1.1.0
+* Read resized window height and height pass it to props
+
+### 1.0.3
 * Read window width and pass it to props
-* Read resized window width and pass it to props
+* Read resized window width and height pass it to props
 * passing window width range and return bool to props => [here](https://github.com/seeliang/react-meida-query-dynamic/blob/147d2a62c6ed2ceff5169af6fe07d3fe4fc8f0d9/demo.js#L37) 
