@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/seeliang/react-media-query-dynamic/issues"
   },
-  "version": "1.0.3",
+  "version": "1.1.0",
   "main": "./lib/index.js",
   "scripts": {
     "dev-env": "NODE_ENV=dev yarn webpack-dev-server --progress --inline --hot --mode development --https",
