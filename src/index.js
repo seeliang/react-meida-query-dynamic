@@ -16,14 +16,16 @@ const mQDynamic = (RenderComponent, setting) => {
       super();
       this.state = {
         currentWindowWidth: 0,
+        currentWindowHeight: 0,
         feed: {},
       };
     }
 
 
     componentDidMount() {
-      const initWinWidth = window.innerWidth;
-      this.updateState(initWinWidth);
+      const { innerWidth, innerHeight } = window;
+      this.setState({ currentWindowHeight: innerHeight });
+      this.updateState(innerWidth);
       window.addEventListener('resize', (e) => {
         debounce(this.handleResize(e), 300);
       });
@@ -46,8 +48,9 @@ const mQDynamic = (RenderComponent, setting) => {
     }
 
     handleResize(e) {
-      const curWinWidth = e.target.innerWidth;
-      this.updateState(curWinWidth);
+      const { innerWidth, innerHeight } = e.target;
+      this.setState({ currentWindowHeight: innerHeight });
+      this.updateState(innerWidth);
     }
 
     render() {
