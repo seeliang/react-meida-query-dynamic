@@ -1,9 +1,28 @@
-import React, { Component } from 'react'; // eslint-disable-line
+import React, { Component, useEffect, useState } from 'react'; // eslint-disable-line
 import debounce from 'debounce';
 
 const getDisplayName = WrappedComponent => WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
 const result = (arr, value) => arr[0] <= value && value <= arr[1];
+
+export const useMediaQueryDynamic = () => {
+  const [width,setWidth] = useState(0)
+  const [height,setHeight] = useState(0)
+  const handleResize = (e) => {
+    const { innerWidth, innerHeight } = e.target;
+    setWidth(innerWidth);
+    setHeight(innerHeight);
+  }
+  useEffect(() => {
+    window.addEventListener('resize',
+      handleResize)
+    return () => {
+      window.removeEventListener('resize',
+      handleResize)
+    }
+  },[]);
+  return { width, height }
+}
 
 const generateFeed = (winWidth, options) => Object.keys(options).reduce(
   (r, i) => Object.assign({}, r, { [i]: result(options[i], winWidth) }),

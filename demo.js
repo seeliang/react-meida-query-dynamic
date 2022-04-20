@@ -1,32 +1,12 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import * as Client from 'react-dom/client';
 import PropTypes from 'prop-types';
-import mQDynamic from './src';
-
-const Informer = () => {
-  const [width,setWidth] = useState(0)
-  const [height,setHeight] = useState(0)
-  const handleResize = (e) => {
-    const { innerWidth, innerHeight } = e.target;
-    setWidth(innerWidth);
-    setHeight(innerHeight);
-  }
-  useEffect(() => {
-    window.addEventListener('resize',
-      handleResize)
-    return () => {
-      window.removeEventListener('resize',
-      handleResize)
-    }
-  },[])
-  return (
-    <b>{width}: {height}</b>
-  )
-}
+import mQDynamic, {useMediaQueryDynamic} from './src';
 
 const Demo = ({ mediaQuery }) => {
   const { currentWindowWidth } = mediaQuery;
   const [isShowing,setInformer] = useState(true)
+  const {width, height} = useMediaQueryDynamic();
   const handle = (e) => {
     setInformer(!isShowing)
   }
@@ -34,7 +14,7 @@ const Demo = ({ mediaQuery }) => {
   return (
     <Fragment>
       <button onClick={e => handle(e)}>toggle</button>
-    {isShowing? <Informer/>: ''}
+    {isShowing?   <b>{width}: {height}</b>: ''}
     <p>
       {` this is mobile: ${currentWindowWidth < 768 ? 'yes' : 'no'}`}
     </p>
