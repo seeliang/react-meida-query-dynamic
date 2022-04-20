@@ -8,12 +8,17 @@ const result = (arr, value) => arr[0] <= value && value <= arr[1];
 export const useMediaQueryDynamic = () => {
   const [width,setWidth] = useState(0)
   const [height,setHeight] = useState(0)
-  const handleResize = (e) => {
-    const { innerWidth, innerHeight } = e.target;
+
+  const setData = (data) => {
+    const { innerWidth, innerHeight } = data;
     setWidth(innerWidth);
     setHeight(innerHeight);
   }
+  const handleResize = (e) => {
+    setData(e.target);
+  }
   useEffect(() => {
+    setData(window);
     window.addEventListener('resize',
       handleResize)
     return () => {
