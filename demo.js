@@ -14,6 +14,10 @@ const Informer = () => {
   useEffect(() => {
     window.addEventListener('resize',
       handleResize)
+    return () => {
+      window.removeEventListener('resize',
+      handleResize)
+    }
   },[])
   return (
     <b>{width}: {height}</b>
