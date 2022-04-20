@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { render } from 'react-dom';
+import * as Client from 'react-dom/client';
 import PropTypes from 'prop-types';
 import mQDynamic from './src';
 
@@ -50,4 +50,8 @@ const DemoRoot = () => (
   </Fragment>
 );
 
-render(<DemoRoot />, document.getElementById('app'));
+const initialRoot = document.getElementById('app')
+
+const root = Client.createRoot(initialRoot)
+
+root.render(<DemoRoot />);
