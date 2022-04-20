@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import * as Client from 'react-dom/client';
 import PropTypes from 'prop-types';
 import mQDynamic from './src';
@@ -6,10 +6,25 @@ import mQDynamic from './src';
 
 const Demo = ({ mediaQuery }) => {
   const { currentWindowWidth } = mediaQuery;
+  const [width,setWidth] = useState(0)
+  const [height,setHeight] = useState(0)
+
+  const handleResize = (e) => {
+    const { innerWidth, innerHeight } = e.target;
+    setWidth(innerWidth);
+    setHeight(innerHeight);
+  }
+  useEffect(() => {
+    window.addEventListener('resize',
+      handleResize)
+  },[])
   return (
+    <Fragment>
+    <b>{width}: {height}</b>
     <p>
       {` this is mobile: ${currentWindowWidth < 768 ? 'yes' : 'no'}`}
     </p>
+    </Fragment>
   );
 };
 
