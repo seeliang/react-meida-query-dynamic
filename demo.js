@@ -3,12 +3,9 @@ import * as Client from 'react-dom/client';
 import PropTypes from 'prop-types';
 import mQDynamic from './src';
 
-
-const Demo = ({ mediaQuery }) => {
-  const { currentWindowWidth } = mediaQuery;
+const Informer = () => {
   const [width,setWidth] = useState(0)
   const [height,setHeight] = useState(0)
-
   const handleResize = (e) => {
     const { innerWidth, innerHeight } = e.target;
     setWidth(innerWidth);
@@ -19,8 +16,21 @@ const Demo = ({ mediaQuery }) => {
       handleResize)
   },[])
   return (
-    <Fragment>
     <b>{width}: {height}</b>
+  )
+}
+
+const Demo = ({ mediaQuery }) => {
+  const { currentWindowWidth } = mediaQuery;
+  const [isShowing,setInformer] = useState(true)
+  const handle = (e) => {
+    setInformer(!isShowing)
+  }
+
+  return (
+    <Fragment>
+      <button onClick={e => handle(e)}>toggle</button>
+    {isShowing? <Informer/>: ''}
     <p>
       {` this is mobile: ${currentWindowWidth < 768 ? 'yes' : 'no'}`}
     </p>
