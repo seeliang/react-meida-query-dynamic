@@ -1,15 +1,24 @@
-import React, { Fragment } from 'react';
-import { render } from 'react-dom';
+import React, { Fragment, useState } from 'react';
+import * as Client from 'react-dom/client';
 import PropTypes from 'prop-types';
-import mQDynamic from './src';
-
+import mQDynamic, {useMediaQueryDynamic} from './src';
 
 const Demo = ({ mediaQuery }) => {
   const { currentWindowWidth } = mediaQuery;
+  const [isShowing,setInformer] = useState(true)
+  const {width, height} = useMediaQueryDynamic();
+  const handle = (e) => {
+    setInformer(!isShowing)
+  }
+
   return (
+    <Fragment>
+      <button onClick={e => handle(e)}>toggle</button>
+    {isShowing?   <b>{width}: {height}</b>: ''}
     <p>
       {` this is mobile: ${currentWindowWidth < 768 ? 'yes' : 'no'}`}
     </p>
+    </Fragment>
   );
 };
 
@@ -50,4 +59,8 @@ const DemoRoot = () => (
   </Fragment>
 );
 
-render(<DemoRoot />, document.getElementById('app'));
+const initialRoot = document.getElementById('app')
+
+const root = Client.createRoot(initialRoot)
+
+root.render(<DemoRoot />);
