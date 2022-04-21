@@ -3,8 +3,7 @@ import * as Client from 'react-dom/client';
 import PropTypes from 'prop-types';
 import mQDynamic, {useMediaQueryDynamic} from './src';
 
-const Demo = ({ mediaQuery }) => {
-  const { currentWindowWidth } = mediaQuery;
+const HookDemo = () => {
   const [isShowing,setInformer] = useState(true)
   const {width, height} = useMediaQueryDynamic();
   const handle = (e) => {
@@ -15,23 +14,16 @@ const Demo = ({ mediaQuery }) => {
     <Fragment>
       <button onClick={e => handle(e)}>toggle</button>
     {isShowing?   <b>{width}: {height}</b>: ''}
-    <p>
-      {` this is mobile: ${currentWindowWidth < 768 ? 'yes' : 'no'}`}
-    </p>
+
     </Fragment>
   );
-};
-
-Demo.propTypes = {
-  mediaQuery: PropTypes.shape({
-    currentWindowWidth: PropTypes.number.isRequired,
-  }).isRequired,
 };
 
 const Demo1 = ({ mediaQuery }) => {
   const { currentWindowWidth } = mediaQuery;
   return (
     <p>
+      {` this is mobile: ${currentWindowWidth < 768 ? 'yes' : 'no'}`}
       {`current: ${currentWindowWidth}`}
     </p>
   );
@@ -48,13 +40,11 @@ const config = {
   isDesktop: [769, 9999],
 };
 
-const Wrapped = mQDynamic(Demo1);
-
-const WrappedDemo = mQDynamic(Demo, config);
+const WrappedDemo = mQDynamic(Demo1, config);
 
 const DemoRoot = () => (
   <Fragment>
-    <Wrapped />
+    <HookDemo />
     <WrappedDemo />
   </Fragment>
 );
